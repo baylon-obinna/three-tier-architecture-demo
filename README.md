@@ -138,6 +138,9 @@ Setup EKS:
 Check EKS file to see commands to install EKS,setup oidc-IAM,alb configuration and EBS-CSI driver.
 
 DEPLOYING APP ON KUBERNETES USING HELM
+
 Create a namespace and install using helm, helm will make use of the chart.yaml file to get all pods up and running,refer to EKS/helm for commands.
+
 To access the pods apply ingress.yaml this creates a load balancer for the pods.
+
 Copy the load balancer endpoint on ec2 and paste on the browser.
