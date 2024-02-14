@@ -2,8 +2,6 @@
 
 Stan's Robot Shop is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Stan's Robot Shop. To be clear, the error handling is patchy and there is not any security built into the application.
 
-You can get more detailed information from my [blog post](https://www.instana.com/blog/stans-robot-shop-sample-microservice-application/) about this sample microservice application.
-
 This sample microservice application has been built using these technologies:
 - NodeJS ([Express](http://expressjs.com/))
 - Java ([Spring Boot](https://spring.io/))
@@ -125,4 +123,21 @@ To test the metrics use:
 $ curl http://<host>:8080/api/cart/metrics
 $ curl http://<host>:8080/api/payment/metrics
 ```
+## Deploying on EKS
 
+Prerequisites;
+kubectl – A command line tool for working with Kubernetes clusters. For more information, see Installing or updating kubectl. https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+
+eksctl – A command line tool for working with EKS clusters that automates many individual tasks. For more information, see Installing or updating. https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
+
+AWS CLI – A command line tool for working with AWS services, including Amazon EKS. For more information, see Installing, updating, and uninstalling the AWS CLI https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html in the AWS Command Line Interface User Guide.
+
+After installing the AWS CLI, I recommend that you also configure it. For more information, see Quick configuration with aws configure in the AWS Command Line Interface User Guide. https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config
+
+Setup EKS:
+Check eks file to see commands to install eks,setup oidc-IAM,alb configuration and EBS-CSI driver.
+
+DEPLOYING APP ON KUBERNETES USING HELM
+Create a namespace and install using helm, helm will make use of the chart.yaml file to get all pods up and running,refer to EKS/helm for commands.
+To access the pods apply ingress.yaml this creates a load balancer for the pods.
+Copy the load balancer endpoint on ec2 and paste on the browser.
