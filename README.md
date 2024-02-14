@@ -134,7 +134,8 @@ AWS CLI – A command line tool for working with AWS services, including Amazon 
 
 After installing the AWS CLI, I recommend that you also configure it. For more information, see Quick configuration with aws configure in the AWS Command Line Interface User Guide. https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config
 
-Setup EKS:
+SETUP EKS
+
 Check EKS file to see commands to install EKS,setup oidc-IAM,alb configuration and EBS-CSI driver.
 
 DEPLOYING APP ON KUBERNETES USING HELM
